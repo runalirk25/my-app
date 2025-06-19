@@ -29,5 +29,5 @@ jobs:
           cd ${{ secrets.APP_DIR }}
           git pull origin master
           npm install
-          pm2 restart react-app || pm2 start index.js --name react-app
+          pm2 restart react-app || pm2 start npm --name react-app -- start
         EOF
