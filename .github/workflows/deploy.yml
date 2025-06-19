@@ -28,6 +28,6 @@ jobs:
 
           cd ${{ secrets.APP_DIR }}
           git pull origin master
-          npm install
-          pm2 restart react-app || pm2 start npm --name react-app -- start
+          npm run build
+          pm2 restart react-app || pm2 start serve --name react-app -- -s build --listen 3000
         EOF
